@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: monospace;
+	font-size: 24px;
+	color: rgb(20, 6, 57)
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	background-color: aliceblue;
+}
+
+.title {
+	padding: 40px;
+	font-size: 1.5em;
+
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	background-color: aliceblue;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.section {
+	min-width: 500px;
+	box-shadow: 0px 1px #dadace
+}
+
+.summary {
+	padding: 20px;
+	list-style: none;
+	cursor: pointer;
+	position: relative;
+}
+
+.summary::after {
+	content: '+';
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.meme-container {
+	padding: 30px;
+}
