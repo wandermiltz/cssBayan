@@ -33,7 +33,26 @@ html {
 	flex-direction: column;
 	width: 40%;
 	min-height: 100vh;
-	transition: 1s;
+	transition: 0.7s
+}
+
+.label {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.8em;
+	cursor: pointer;
+	color: rgb(26, 95, 187);
+	transition: 0.7s;
+}
+
+.input {
+	width: 0;
+	height: 0;
+	appearance: none;
+}
+
+.meme-container {
+	display: none;
 }
 
 .section {
@@ -44,11 +63,10 @@ html {
 .summary {
 	display: flex;
 	flex-direction: column;
-	padding: 2rem;
 	font-size: 2.5rem;
 	list-style: none;
 	cursor: pointer;
-	transition: 1s;
+	transition: 0.7s;
 }
 
 .summary-container {
@@ -56,25 +74,20 @@ html {
 	justify-content: space-between;
 }
 
-.summary-title {
-	color: rgb(26, 95, 187)
-}
-
-.accordion-container:hover .summary-title {
+.accordion-container:hover .label {
 	color: rgb(50, 37, 2)
 }
 
-details[open] .summary-title {
+.input:checked~.label {
 	color: rgb(50, 37, 2)
 }
 
 .meme-container {
 	display: none;
-	transition: all 1s ease-out;
 }
 
-.summary-container:hover~.meme-container,
-details[open] .meme-container {
+.summary:hover .meme-container,
+.input:checked~.meme-container {
 	display: flex;
 	justify-content: center;
 	padding: 1.5rem;
@@ -92,8 +105,8 @@ details[open] .meme-container {
 	transition: 0.3s;
 }
 
-details[open] .summary-icon,
-.summary-container:hover .summary-icon {
+.input:checked~.label .summary-icon,
+.summary:hover .summary-icon {
 	background: url(assets/svg/close.svg) no-repeat center;
 }
 
