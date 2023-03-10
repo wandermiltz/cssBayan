@@ -3,7 +3,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: monospace;
-	color: rgb(60, 104, 161)
 }
 
 html {
@@ -14,7 +13,7 @@ html {
 .header {
 	display: flex;
 	justify-content: center;
-	background-color: rgb(252, 251, 245);
+	background-color: rgb(250, 249, 246);
 }
 
 .title {
@@ -26,7 +25,7 @@ html {
 .main {
 	display: flex;
 	justify-content: center;
-	background-color: rgb(252, 251, 245);
+	background-color: rgb(250, 249, 246);
 }
 
 .accordion-container {
@@ -51,15 +50,21 @@ html {
 	transition: 0.3s;
 }
 
+.summary-title {
+	color: rgb(26, 95, 187)
+}
+
 .summary:hover {
-	background-color: rgb(244, 244, 237);
+	background-color: rgb(239, 238, 235);
 }
 
 .accordion-container:hover .summary-title {
 	color: rgb(50, 37, 2)
 }
 
-/* details[open] .summary-title {} */
+details[open] .summary-title {
+	color: rgb(50, 37, 2)
+}
 
 .meme-container {
 	display: flex;
@@ -73,22 +78,17 @@ html {
 }
 
 .icon {
-	display: none;
-	transition: 1s;
-}
-
-.accordion-container:hover .icon {
-	display: block;
-}
-
-.close-icon {
-	width: 0.6em;
-	height: 0.6em;
-}
-
-.plus-icon {
 	width: 0.7em;
 	height: 0.7em;
+	background: url(assets/svg/plus.svg) no-repeat center;
+}
+
+details[open] .icon {
+	background: url(assets/svg/close.svg) no-repeat center;
+}
+
+.accordion-container:not(:hover) .icon {
+	background: none;
 }
 
 /* mobile 320x568,
