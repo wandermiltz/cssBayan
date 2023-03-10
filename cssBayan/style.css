@@ -3,8 +3,12 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: monospace;
-	font-size: 24px;
 	color: rgb(50, 37, 2)
+}
+
+html {
+	/* 10px */
+	font-size: 62.5%;
 }
 
 .header {
@@ -14,8 +18,8 @@
 }
 
 .title {
-	padding: 3vh;
-	font-size: 1.5em;
+	font-size: 5rem;
+	padding: 3rem;
 }
 
 .main {
@@ -33,20 +37,52 @@
 
 .section {
 	width: 100%;
-	box-shadow: 0px 1px #dadace
+	box-shadow: 0px 1px rgb(217, 217, 210);
 }
 
 .summary {
-	padding: 1.5vh;
+	padding: 2rem;
+	font-size: 2.5rem;
 	list-style: none;
 	cursor: pointer;
 }
 
 .meme-container {
-	padding: 1.5vh;
+	padding: 1rem;
 }
 
 .meme-img {
 	width: 70%;
 	height: 70%;
+}
+
+/* mobile 320x568,
+tablet 820x1180,
+desktop 1920×1080 */
+
+@media (min-width: 1025px) {}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+	.title {
+		font-size: 4rem;
+	}
+
+	.container {
+		width: 50%;
+	}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 3rem;
+	}
+
+	.summary {
+		font-size: 2rem;
+		padding: 1rem;
+	}
+
+	.container {
+		width: 70%;
+	}
 }
