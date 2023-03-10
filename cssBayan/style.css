@@ -17,9 +17,9 @@ html {
 }
 
 .title {
-	font-size: 5rem;
+	font-size: 4.5rem;
 	padding: 3rem;
-	color: rgb(148, 128, 73)
+	color: rgb(143, 124, 74)
 }
 
 .main {
@@ -31,9 +31,9 @@ html {
 .accordion-container {
 	display: flex;
 	flex-direction: column;
-	width: 40%;
+	width: 30%;
 	min-height: 100vh;
-	transition: 0.7s
+	transition: 0.3s
 }
 
 .label {
@@ -41,8 +41,8 @@ html {
 	justify-content: space-between;
 	padding: 0.8em;
 	cursor: pointer;
-	color: rgb(26, 95, 187);
-	transition: 0.7s;
+	color: rgb(56, 126, 218);
+	transition: 0.5s;
 }
 
 .input {
@@ -63,10 +63,10 @@ html {
 .summary {
 	display: flex;
 	flex-direction: column;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	list-style: none;
 	cursor: pointer;
-	transition: 0.7s;
+	transition: 0.5s;
 }
 
 .summary-container {
@@ -94,8 +94,8 @@ html {
 }
 
 .meme-img {
-	width: 70%;
-	height: 70%;
+	width: 50%;
+	height: 50%;
 }
 
 .summary-icon {
@@ -116,13 +116,13 @@ html {
 
 @keyframes to-large-meme {
 	from {
-		width: 60%;
-		height: 60%;
+		width: 40%;
+		height: 40%;
 	}
 
 	to {
-		width: 70%;
-		height: 70%;
+		width: 50%;
+		height: 50%;
 	}
 }
 
@@ -132,15 +132,14 @@ html {
 	animation-timing-function: ease-in;
 }
 
-/* mobile 320x568,
-tablet 820x1180,
-desktop 1920×1080 */
-
-@media (min-width: 1025px) {}
-
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 	.title {
-		font-size: 4rem;
+		font-size: 3.8rem;
+		padding: 2rem;
+	}
+
+	.summary {
+		font-size: 2.3rem;
 	}
 
 	.accordion-container {
@@ -148,17 +147,17 @@ desktop 1920×1080 */
 	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
 	.title {
 		font-size: 3rem;
+		padding: 1.5rem;
 	}
 
 	.summary {
-		font-size: 2rem;
-		padding: 1rem;
+		font-size: 2.5rem;
 	}
 
 	.accordion-container {
-		width: 70%;
+		width: 80%;
 	}
 }
