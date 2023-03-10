@@ -42,12 +42,17 @@ html {
 
 .summary {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
 	padding: 2rem;
 	font-size: 2.5rem;
 	list-style: none;
 	cursor: pointer;
 	transition: 0.3s;
+}
+
+.summary-container {
+	display: flex;
+	justify-content: space-between;
 }
 
 .summary-title {
@@ -67,6 +72,11 @@ details[open] .summary-title {
 }
 
 .meme-container {
+	display: none;
+}
+
+section:hover .meme-container,
+details[open] .meme-container {
 	display: flex;
 	justify-content: center;
 	padding: 1.5rem;
@@ -77,17 +87,18 @@ details[open] .summary-title {
 	height: 70%;
 }
 
-.icon {
+.summary-icon {
 	width: 0.7em;
 	height: 0.7em;
 	background: url(assets/svg/plus.svg) no-repeat center;
 }
 
-details[open] .icon {
+details[open] .summary-icon,
+.summary:hover .summary-icon {
 	background: url(assets/svg/close.svg) no-repeat center;
 }
 
-.accordion-container:not(:hover) .icon {
+.accordion-container:not(:hover) .summary-icon {
 	background: none;
 }
 
