@@ -33,6 +33,7 @@ html {
 	flex-direction: column;
 	width: 40%;
 	min-height: 100vh;
+	transition: 1s;
 }
 
 .section {
@@ -47,7 +48,7 @@ html {
 	font-size: 2.5rem;
 	list-style: none;
 	cursor: pointer;
-	transition: 0.3s;
+	transition: 1s;
 }
 
 .summary-container {
@@ -57,10 +58,6 @@ html {
 
 .summary-title {
 	color: rgb(26, 95, 187)
-}
-
-.summary:hover {
-	background-color: rgb(239, 238, 235);
 }
 
 .accordion-container:hover .summary-title {
@@ -73,9 +70,10 @@ details[open] .summary-title {
 
 .meme-container {
 	display: none;
+	transition: all 1s ease-out;
 }
 
-section:hover .meme-container,
+.summary-container:hover~.meme-container,
 details[open] .meme-container {
 	display: flex;
 	justify-content: center;
@@ -91,15 +89,34 @@ details[open] .meme-container {
 	width: 0.7em;
 	height: 0.7em;
 	background: url(assets/svg/plus.svg) no-repeat center;
+	transition: 0.3s;
 }
 
 details[open] .summary-icon,
-.summary:hover .summary-icon {
+.summary-container:hover .summary-icon {
 	background: url(assets/svg/close.svg) no-repeat center;
 }
 
 .accordion-container:not(:hover) .summary-icon {
 	background: none;
+}
+
+@keyframes to-large-meme {
+	from {
+		width: 60%;
+		height: 60%;
+	}
+
+	to {
+		width: 70%;
+		height: 70%;
+	}
+}
+
+.meme-img {
+	animation-name: to-large-meme;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in;
 }
 
 /* mobile 320x568,
