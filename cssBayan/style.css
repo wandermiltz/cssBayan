@@ -17,9 +17,9 @@ html {
 }
 
 .title {
-	font-size: 4.5rem;
-	padding: 3rem;
-	color: rgb(143, 124, 74)
+	font-size: 4.2rem;
+	padding: 2.4rem;
+	color: rgb(122, 104, 57)
 }
 
 .main {
@@ -27,6 +27,7 @@ html {
 	justify-content: center;
 	background-color: rgb(250, 249, 246);
 }
+
 
 .accordion-container {
 	display: flex;
@@ -36,12 +37,12 @@ html {
 	transition: 0.3s
 }
 
-.label {
+.summary-title {
 	display: flex;
 	justify-content: space-between;
 	padding: 0.8em;
 	cursor: pointer;
-	color: rgb(56, 126, 218);
+	color: rgb(122, 104, 57);
 	transition: 0.5s;
 }
 
@@ -74,12 +75,9 @@ html {
 	justify-content: space-between;
 }
 
-.accordion-container:hover .label {
-	color: rgb(50, 37, 2)
-}
-
-.input:checked~.label {
-	color: rgb(50, 37, 2)
+.accordion-container:hover .summary-title,
+.input:checked~.summary-title {
+	color: rgb(63, 60, 235);
 }
 
 .meme-container {
@@ -94,8 +92,8 @@ html {
 }
 
 .meme-img {
-	width: 50%;
-	height: 50%;
+	width: 80%;
+	height: 80%;
 }
 
 .summary-icon {
@@ -105,7 +103,7 @@ html {
 	transition: 0.3s;
 }
 
-.input:checked~.label .summary-icon,
+.input:checked~.summary-title .summary-icon,
 .summary:hover .summary-icon {
 	background: url(assets/svg/close.svg) no-repeat center;
 }
@@ -116,13 +114,13 @@ html {
 
 @keyframes to-large-meme {
 	from {
-		width: 40%;
-		height: 40%;
+		width: 60%;
+		height: 60%;
 	}
 
 	to {
-		width: 50%;
-		height: 50%;
+		width: 80%;
+		height: 80%;
 	}
 }
 
