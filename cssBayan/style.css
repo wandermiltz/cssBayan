@@ -28,33 +28,12 @@ html {
 	background-color: rgb(250, 249, 246);
 }
 
-
 .accordion-container {
 	display: flex;
 	flex-direction: column;
 	width: 30%;
 	min-height: 100vh;
 	transition: 0.3s
-}
-
-.summary-title {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0.8em;
-	cursor: pointer;
-	color: rgb(122, 104, 57);
-	transition: 0.5s;
-}
-
-.input {
-	width: 0;
-	height: 0;
-	appearance: none;
-}
-
-.meme-container {
-	display: none;
 }
 
 .section {
@@ -76,12 +55,36 @@ html {
 	justify-content: space-between;
 }
 
-.input:checked~.summary-title {
+.summary-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.8em;
+	cursor: pointer;
 	color: rgb(63, 60, 235);
+	transition: 0.5s;
+}
+
+.summary-icon {
+	width: 0.7em;
+	height: 0.7em;
+	background: url(assets/svg/plus.svg) no-repeat center;
+	transition: 0.3s;
+}
+
+.input {
+	width: 0;
+	height: 0;
+	appearance: none;
 }
 
 .meme-container {
 	display: none;
+}
+
+.meme-img {
+	width: 80%;
+	height: 80%;
 }
 
 .input:checked~.meme-container {
@@ -90,16 +93,8 @@ html {
 	padding: 1.5rem;
 }
 
-.meme-img {
-	width: 80%;
-	height: 80%;
-}
-
-.summary-icon {
-	width: 0.7em;
-	height: 0.7em;
-	background: url(assets/svg/plus.svg) no-repeat center;
-	transition: 0.3s;
+.input:checked~.summary-title {
+	color: rgb(122, 104, 57);
 }
 
 .input:checked~.summary-title .summary-icon {
@@ -125,12 +120,13 @@ html {
 }
 
 @media (min-width: 1025px) {
+
 	.accordion-container:not(:hover) .summary-icon {
 		background: none;
 	}
 
 	.accordion-container:hover .summary-title {
-		color: rgb(63, 60, 235);
+		color: rgb(122, 104, 57);
 	}
 
 	.summary:hover .meme-container {
@@ -142,36 +138,36 @@ html {
 	.summary:hover .summary-icon {
 		background: url(assets/svg/close.svg) no-repeat center;
 	}
-
-
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+
 	.title {
 		font-size: 3.8rem;
 		padding: 2rem;
 	}
 
-	.summary {
-		font-size: 2.2rem;
-	}
-
 	.accordion-container {
 		width: 50%;
+	}
+
+	.summary {
+		font-size: 2.2rem;
 	}
 }
 
 @media (max-width: 767px) {
+
 	.title {
 		font-size: 3rem;
 		padding: 1.5rem;
 	}
 
-	.summary {
-		font-size: 2.4rem;
-	}
-
 	.accordion-container {
 		width: 80%;
+	}
+
+	.summary {
+		font-size: 2.4rem;
 	}
 }
