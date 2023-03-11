@@ -13,11 +13,10 @@ html {
 .header {
 	display: flex;
 	justify-content: center;
-	background-color: rgb(250, 249, 246);
 }
 
 .title {
-	font-size: 4.2rem;
+	font-size: 3.8rem;
 	padding: 2.4rem;
 	color: rgb(122, 104, 57)
 }
@@ -25,23 +24,23 @@ html {
 .main {
 	display: flex;
 	justify-content: center;
-	background-color: rgb(250, 249, 246);
 }
 
 .accordion-container {
 	display: flex;
 	flex-direction: column;
-	width: 30%;
-	min-height: 100vh;
-	transition: 0.3s
+	margin-bottom: 5rem;
+	width: 40%;
+	transition: 0.5s;
+	background-color: rgb(250, 249, 246);
 }
 
-.section {
+.section-container {
 	width: 100%;
 	box-shadow: 0px 1px rgb(236, 236, 229);
 }
 
-.summary {
+.section {
 	display: flex;
 	flex-direction: column;
 	font-size: 2rem;
@@ -50,26 +49,20 @@ html {
 	transition: 0.5s;
 }
 
-.summary-container {
-	display: flex;
-	justify-content: space-between;
-}
-
-.summary-title {
+.section-title {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.8em;
+	padding: 1em;
 	cursor: pointer;
-	color: rgb(63, 60, 235);
-	transition: 0.5s;
+	color: rgb(79, 63, 23);
 }
 
-.summary-icon {
+.section-icon {
 	width: 0.7em;
 	height: 0.7em;
 	background: url(assets/svg/plus.svg) no-repeat center;
-	transition: 0.3s;
+	transition: 0.5s;
 }
 
 .input {
@@ -85,20 +78,33 @@ html {
 .meme-img {
 	width: 80%;
 	height: 80%;
+	border: 0.1rem solid rgb(163, 168, 15);
+	border-radius: 10px;
+}
+
+.input:checked~.section-title {
+	color: rgb(137, 141, 0);
+	border: 0.1rem solid rgb(163, 168, 15);
+	background-color: rgb(247, 247, 231);
+}
+
+.input:checked~.section-title .section-icon {
+	background: url(assets/svg/close.svg) no-repeat center;
 }
 
 .input:checked~.meme-container {
 	display: flex;
 	justify-content: center;
-	padding: 1.5rem;
+	padding: 2.5rem 0 2.5rem 0;
+	border: 0.1rem solid rgb(163, 168, 15);
+	border-top: none;
+	background-color: rgb(247, 247, 231);
 }
 
-.input:checked~.summary-title {
-	color: rgb(122, 104, 57);
-}
-
-.input:checked~.summary-title .summary-icon {
-	background: url(assets/svg/close.svg) no-repeat center;
+.section:active .meme-container,
+.section:active .section-title .section-icon,
+.section:active .section-title .section-name {
+	opacity: 0.5;
 }
 
 @keyframes to-large-meme {
@@ -115,43 +121,45 @@ html {
 
 .meme-img {
 	animation-name: to-large-meme;
-	animation-duration: 0.3s;
+	animation-duration: 0.5s;
 	animation-timing-function: ease-in;
 }
 
 @media (min-width: 1025px) {
 
-	.accordion-container:not(:hover) .summary-icon {
+	.accordion-container:not(:hover) .section-icon {
 		background: none;
 	}
 
-	.accordion-container:hover .summary-title {
-		color: rgb(122, 104, 57);
+	.accordion-container:hover .section-title {
+		color: rgb(137, 141, 0);
+		cursor: pointer;
 	}
 
-	.summary:hover .meme-container {
+	.section:hover .meme-container {
 		display: flex;
 		justify-content: center;
-		padding: 1.5rem;
+		padding: 2.5rem 0 2.5rem 0;
+		cursor: pointer;
 	}
 
-	.summary:hover .summary-icon {
+	.section:hover .section-icon {
 		background: url(assets/svg/close.svg) no-repeat center;
+		cursor: pointer;
 	}
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
 	.title {
-		font-size: 3.8rem;
-		padding: 2rem;
+		font-size: 3.2rem;
 	}
 
 	.accordion-container {
 		width: 50%;
 	}
 
-	.summary {
+	.section {
 		font-size: 2.2rem;
 	}
 }
@@ -160,14 +168,13 @@ html {
 
 	.title {
 		font-size: 3rem;
-		padding: 1.5rem;
 	}
 
 	.accordion-container {
 		width: 80%;
 	}
 
-	.summary {
+	.section {
 		font-size: 2.4rem;
 	}
 }
