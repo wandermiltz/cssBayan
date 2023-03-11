@@ -45,7 +45,6 @@ html {
 	flex-direction: column;
 	font-size: 2rem;
 	list-style: none;
-	cursor: pointer;
 	transition: 0.5s;
 }
 
@@ -54,7 +53,6 @@ html {
 	justify-content: space-between;
 	align-items: center;
 	padding: 1em;
-	cursor: pointer;
 	color: rgb(79, 63, 23);
 }
 
@@ -126,6 +124,14 @@ html {
 }
 
 @media (min-width: 1025px) {
+
+	.section {
+		cursor: pointer;
+	}
+
+	.section-title {
+		cursor: pointer;
+	}
 
 	.accordion-container:not(:hover) .section-icon {
 		background: none;
